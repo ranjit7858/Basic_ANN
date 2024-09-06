@@ -19,7 +19,7 @@ sudo apt-get install -y python3 python3-pipx
 
 # Install application dependencies from requirements.txt
 echo "Install application dependencies from requirements.txt"
-sudo pipx install -r requirements.txt
+sudo pip install -r requirements.txt
 
 # Update and install Nginx if not already installed
 if ! command -v nginx > /dev/null; then
