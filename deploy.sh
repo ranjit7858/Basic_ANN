@@ -9,6 +9,13 @@ sudo mkdir -p /var/www/Customer_Churn_Prediction_ANN
 echo "moving files to app folder"
 sudo mv  * /var/www/Customer_Churn_Prediction_ANN
 
+python -m venv venv
+source venv/bin/activate
+
+sudo apt install pipx
+pipx install uwsgi geventsudo apt install pipx
+pipx install uwsgi gevent
+
 # Navigate to the app directory
 cd /var/www/Customer_Churn_Prediction_ANN/
 sudo mv env .env
@@ -52,7 +59,7 @@ fi
 
 # sudo pipx install uwsgi gevent
 echo "starting uwsgi ................................................."
-uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
+/home/ubuntu/venv/bin/uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
 echo "started uwsgi 🚀................................................"
 # Stop any existing Gunicorn process
 # sudo pkill gunicorn``
