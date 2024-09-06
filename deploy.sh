@@ -14,12 +14,12 @@ cd /var/www/Customer_Churn_Prediction_ANN/
 sudo mv env .env
 
 sudo apt-get update
-echo "installing python and pip"
-sudo apt-get install -y python3 python3-pip
+echo "installing python and pipx"
+sudo apt-get install -y python3 python3-pipx
 
 # Install application dependencies from requirements.txt
 echo "Install application dependencies from requirements.txt"
-sudo pip install -r requirements.txt
+sudo pipx install -r requirements.txt
 
 # Update and install Nginx if not already installed
 if ! command -v nginx > /dev/null; then
@@ -50,7 +50,7 @@ else
 fi
 
 
-# sudo pip install uwsgi gevent
+# sudo pipx install uwsgi gevent
 echo "starting uwsgi ................................................."
 /home/ubuntu/venv/bin/uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
 echo "started uwsgi 🚀................................................"
