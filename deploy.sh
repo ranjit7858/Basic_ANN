@@ -14,8 +14,8 @@ cd /var/www/Customer_Churn_Prediction_ANN/
 sudo mv env .env
 
 sudo apt-get update
-echo "installing python and pipx"
-sudo apt-get install -y python3 python3-pipx
+echo "installing python and pip"
+sudo apt-get install -y python3 python3-pip
 
 # Install application dependencies from requirements.txt
 echo "Install application dependencies from requirements.txt"
@@ -52,10 +52,10 @@ fi
 
 # sudo pipx install uwsgi gevent
 echo "starting uwsgi ................................................."
-/home/ubuntu/venv/bin/uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
+uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
 echo "started uwsgi 🚀................................................"
 # Stop any existing Gunicorn process
-# sudo pkill gunicorn
+# sudo pkill gunicorn``
 # # sudo pkill uwsgi
 # sudo rm -rf myapp.sock
 
