@@ -19,12 +19,12 @@ has_cr_card = None
 is_active_member = None
 result = ""
 
-model = tf.keras.models.load_model('/home/ranjit/Desktop/GenAI/ANN_implementaion/model.h5')
-with open('/home/ranjit/Desktop/GenAI/ANN_implementaion/label_encoder_gender.pkl', 'rb') as file :
+model = tf.keras.models.load_model('model.h5')
+with open('label_encoder_gender.pkl', 'rb') as file :
     LabelEncoderGender = pickle.load(file) 
-with open('/home/ranjit/Desktop/GenAI/ANN_implementaion/onehotencoder_geo.pkl', 'rb') as file :
+with open('onehotencoder_geo.pkl', 'rb') as file :
     OneHotEncoderGeo = pickle.load(file)
-with open('/home/ranjit/Desktop/GenAI/ANN_implementaion//scaler.pkl', 'rb') as file :
+with open('scaler.pkl', 'rb') as file :
     Scaler = pickle.load(file)
 
 page = tgb.Page()
