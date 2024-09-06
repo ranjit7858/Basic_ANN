@@ -9,11 +9,11 @@ sudo mkdir -p /var/www/Customer_Churn_Prediction_ANN
 echo "moving files to app folder"
 sudo mv  * /var/www/Customer_Churn_Prediction_ANN
 
-python -m venv venv
+# python -m venv venv
 source venv/bin/activate
 
 sudo apt update
-sudo apt install python3-uwsgi python3-gevent
+# sudo apt install python3-uwsgi python3-gevent
 
 # Navigate to the app directory
 cd /var/www/Customer_Churn_Prediction_ANN/
@@ -25,7 +25,7 @@ sudo apt-get install -y python3 python3-pip
 
 # Install application dependencies from requirements.txt
 echo "Install application dependencies from requirements.txt"
-sudo pip install -r requirements.txt
+# sudo pip install -r requirements.txt
 
 # Update and install Nginx if not already installed
 if ! command -v nginx > /dev/null; then
@@ -58,7 +58,7 @@ fi
 
 # sudo pipx install uwsgi gevent
 echo "starting uwsgi ................................................."
-/home/ubuntu/venv/bin/uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
+/home/ubuntu/.local/bin/uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
 echo "started uwsgi 🚀................................................"
 # Stop any existing Gunicorn process
 # sudo pkill gunicorn``
