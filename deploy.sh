@@ -12,9 +12,8 @@ sudo mv  * /var/www/Customer_Churn_Prediction_ANN
 python -m venv venv
 source venv/bin/activate
 
-sudo apt install pipx
-pipx install uwsgi geventsudo apt install pipx
-pipx install uwsgi gevent
+sudo apt update
+sudo apt install python3-uwsgi python3-gevent
 
 # Navigate to the app directory
 cd /var/www/Customer_Churn_Prediction_ANN/
