@@ -27,6 +27,12 @@ sudo apt-get install -y python3 python3-pip
 echo "Install application dependencies from requirements.txt"
 sudo pip install -r requirements.txt
 
+# added few dependencies from taipy doc.
+sudo apt update -y
+sudo apt install -y python3-pip nginx
+sudo pip install uwsgi gevent
+sudo ln -s `pwd`/.local/bin/uwsgi /usr/bin/uwsgi
+
 # Update and install Nginx if not already installed
 if ! command -v nginx > /dev/null; then
     echo "Installing Nginx"
