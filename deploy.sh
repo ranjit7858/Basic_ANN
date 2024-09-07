@@ -19,7 +19,7 @@ sudo apt update
 cd /var/www/Customer_Churn_Prediction_ANN/
 sudo mv env .env
 
-sudo apt-get update
+sudo apt-get update -y
 echo "installing python and pip"
 sudo apt-get install -y python3 python3-pip
 
