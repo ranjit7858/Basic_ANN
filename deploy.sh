@@ -10,7 +10,7 @@ echo "moving files to app folder"
 sudo mv  * /var/www/Customer_Churn_Prediction_ANN
 
 # python -m venv venv
-source venv/bin/activate
+# source venv/bin/activate
 
 sudo apt update
 # sudo apt install python3-uwsgi python3-gevent
