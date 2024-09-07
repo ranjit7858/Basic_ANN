@@ -58,7 +58,7 @@ fi
 
 # sudo pipx install uwsgi gevent
 echo "starting uwsgi ................................................."
-uwsgi --http 0.0.0.0:5000 --gevent 1000 --http-websockets --module /var/www/Customer_Churn_Prediction_ANN/app:web_app
+uwsgi --http 0.0.0.0:5000 --gevent 1000 --http-websockets --module app:web_app
 echo "started uwsgi 🚀................................................"
 # Stop any existing Gunicorn process
 # sudo pkill gunicorn``
