@@ -58,7 +58,7 @@ fi
 
 # sudo pipx install uwsgi gevent
 echo "starting uwsgi ................................................."
-/home/ubuntu/.local/bin/uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
+venv/bin/uwsgi --http 127.0.0.1:5000 --gevent 1000 --http-websockets --module app:web_app
 echo "started uwsgi 🚀................................................"
 # Stop any existing Gunicorn process
 # sudo pkill gunicorn``
