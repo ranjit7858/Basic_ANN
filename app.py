@@ -140,4 +140,4 @@ page.add(tgb.text("{result}"))
 
 
 if __name__ == '__main__':
-    taip.Gui(page).run(debug=True, use_reloader= True)
+    taip.Gui(page).run(debug=False, run_server=False)

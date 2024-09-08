@@ -9,29 +9,31 @@ sudo mkdir -p /var/www/Customer_Churn_Prediction_ANN
 echo "moving files to app folder"
 sudo mv  * /var/www/Customer_Churn_Prediction_ANN
 
+
 # python -m venv venv
 # source venv/bin/activate
 
-sudo apt update
-sudo apt install python3-uwsgi python3-gevent
+# sudo apt update
+# sudo apt install python3-uwsgi python3-gevent
 
 # Navigate to the app directory
 cd /var/www/Customer_Churn_Prediction_ANN/
-sudo mv env .env
+# sudo mv env .env
 
 sudo apt-get update -y
 echo "installing python and pip"
 sudo apt-get install -y python3 python3-pip
 
-# Install application dependencies from requirements.txt
-echo "Install application dependencies from requirements.txt"
-sudo pip install -r requirements.txt
 
 # added few dependencies from taipy doc.
 sudo apt update -y
 sudo apt install -y python3-pip nginx
-sudo pip install uwsgi gevent
+sudo pip install uwsgi gevent --no-cache-dir
 sudo ln -s `pwd`/.local/bin/uwsgi /usr/bin/uwsgi
+
+# Install application dependencies from requirements.txt
+echo "Install application dependencies from requirements.txt"
+sudo pip install -r requirements.txt --no-cache-dir
 
 # Update and install Nginx if not already installed
 if ! command -v nginx > /dev/null; then
