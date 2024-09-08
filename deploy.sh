@@ -20,6 +20,10 @@ sudo mv  * /var/www/Customer_Churn_Prediction_ANN
 cd /var/www/Customer_Churn_Prediction_ANN/
 # sudo mv env .env
 
+#launch venv
+python3 -m venv venv
+source venv/bin/activate
+
 sudo apt-get update -y
 echo "installing python and pip"
 sudo apt-get install -y python3 python3-pip
@@ -28,8 +32,8 @@ sudo apt-get install -y python3 python3-pip
 # added few dependencies from taipy doc.
 sudo apt update -y
 sudo apt install -y python3-pip nginx
-sudo pip install uwsgi gevent --no-cache-dir
-sudo ln -s `pwd`/.local/bin/uwsgi /usr/bin/uwsgi
+sudo pip install uwsgi gevent 
+# sudo ln -s `pwd`/.local/bin/uwsgi /usr/bin/uwsgi
 
 # Install application dependencies from requirements.txt
 echo "Install application dependencies from requirements.txt"
